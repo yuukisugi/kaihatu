@@ -1,0 +1,148 @@
+h1 {
+  color: skyblue;
+  text-align: center;
+}
+  
+.header-navigation {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+.header-navigation:after {
+  clear: both;
+  display: block;
+  content: " ";
+}
+
+.header-navigation li {
+  float: left;
+  padding: 0 30px;
+  text-align: center;
+  list-style-type: none;
+}
+
+.header-navigation li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.card-contents:after {
+  clear: both;
+  display: block;
+  content: " ";
+}
+
+.contents{
+  float: left;
+  padding: 0 30px;
+  text-align: center;
+  list-style-type: none;
+}
+
+.card-contents{
+  text-align: center;
+}
+
+.public-image{ 
+  width: 200px;
+  height: 130px;
+}
+
+.copyright{
+  text-align: center;
+}
+
+.hotel-list-row-image{ 
+  width: 200px;
+  height: 130px;
+}
+
+.hotel-list-image{
+  width: 20px;
+  height: 300px;
+}
+
+
+.hotel-list-image {
+  width: 250px !important;
+  height: 250px;
+  object-fit: cover; /* この一行を追加するだけ！ */
+}
+
+.hotel-list-table tr{
+  width: 100%;
+}
+
+.district-container{
+  display: flex;
+  
+}
+
+.district-container img{
+   flex: 1;
+}
+
+.district-container ul{
+    flex: 2;
+    padding: 80px;
+}
+
+.f-container {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+
+.district-list a{
+  display:block;
+  width: 33%;
+  font-size: 20px;
+}
+
+.district-list a:nth-of-type(1){
+  color: #999;
+}
+
+// // .container{display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+
+// Fonts
+// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+// @import "variables";
+
+// // Bootstrap
+// // @import '~bootstrap/scss/bootstrap';
+
+// .hotel-list-row-image{
+//     width: 100px!important;
+// }
+
+// .container{
+// color: red!important;
+// }
+
+// .header-navigation {
+//   width: 100%;
+//   background-color: #fff;
+//   padding: 20px 0;
+// }
+
+// .header-navigation:after {
+//   clear: both;
+//   display: block;
+//   content: " ";
+// }
+
+
+
+
+
