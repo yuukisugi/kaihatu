@@ -1,108 +1,171 @@
 @charset "UTF-8";
 
-h1 {
-  color: skyblue;
-  text-align: center;
-}
+@media screen and (min-width: 480px) {
+  .light-theme {
+    background-image: url("https://i.gyazo.com/e20a0c2f63b066385c67f11d45d2e2bd.jpg");
+    color: #000;
+  }
 
-.header-navigation {
-  width: 100%;
-  background-color: #fff;
-  padding: 20px 0;
-}
+  .dark-theme {
+    background-image: url("https://i.gyazo.com/b9cf53d1b79bb6a65c5c9022c1744403.jpg");
+    color: #fff;
+  }
 
-.header-navigation:after {
-  clear: both;
-  display: block;
-  content: " ";
-}
+  .light-theme p {
+    color: #000;
+    font-size: 25px;
+  }
 
-.header-navigation li {
-  float: left;
-  padding: 0 30px;
-  text-align: center;
-  list-style-type: none;
-}
+  .dark-theme p {
+    color: #fff;
+    font-size: 25x;
+  }
 
-.header-navigation li a {
-  color: #333;
-  text-decoration: none;
-}
+  .light-theme h2 {
+    color: #000;
+  }
 
-.card-contents:after {
-  clear: both;
-  display: block;
-  content: " ";
-}
+  .dark-theme h2 {
+    color: #fff;
+  }
 
-.contents {
-  float: left;
-  padding: 0 30px;
-  text-align: center;
-  list-style-type: none;
-}
+  .logout {
+    text-decoration: none !important;
+  }
 
-.card-contents {
-  text-align: center;
-}
+  p {
+    font-size: 25px;
+  }
 
-.public-image {
-  width: 200px;
-  height: 130px;
-}
+  a {
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin-right: 30px;
+  }
 
-.copyright {
-  text-align: center;
-}
+  body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://i.gyazo.com/e20a0c2f63b066385c67f11d45d2e2bd.jpg");
+    font-size: 20px;
+  }
 
-.hotel-list-row-image {
-  width: 200px;
-  height: 130px;
-}
+  .card-contents:after {
+    clear: both;
+    display: block;
+    content: " ";
+  }
 
-.hotel-list-image {
-  width: 20px;
-  height: 300px;
-}
+  .contents {
+    float: left;
+    padding: 0 30px;
+    text-align: center;
+    list-style-type: none;
+  }
 
-.hotel-list-image {
-  width: 250px !important;
-  height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  /* この一行を追加するだけ！ */
-}
+  .card-contents {
+    text-align: center;
+  }
 
-.hotel-list-table tr {
-  width: 100%;
-}
+  .card-contents a {
+    font-size: 40px;
+  }
 
-.district-container {
-  display: flex;
-}
+  .contents a {
+    font-size: 30px;
+  }
 
-.district-container img {
-  flex: 1;
-}
+  .contents img {
+    width: 250px !important;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    padding: 10px 10;
+  }
 
-.district-container ul {
-  flex: 2;
-  padding: 80px;
-}
+  .copyright {
+    text-align: center;
+  }
 
-.f-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+  .hotel-list-row-image {
+    width: 200px;
+    height: 130px;
+  }
 
-.district-list a {
-  display: block;
-  width: 33%;
-  font-size: 20px;
-}
+  .link {
+    font-size: 25px;
+  }
 
-.district-list a:nth-of-type(1) {
-  color: #999;
+  .hotel-list-image {
+    width: 250px !important;
+    height: 250px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    /* この一行を追加するだけ！ */
+  }
+
+  .list-table tr {
+    width: 100%;
+  }
+
+  .list-table td {
+    padding: 20px 0;
+  }
+
+  .district-container {
+    display: flex;
+  }
+
+  .district-container img {
+    flex: 1;
+  }
+
+  .district-container ul {
+    flex: 2;
+    padding: 80px;
+  }
+
+  .f-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .district-list a {
+    display: block;
+    width: 33%;
+    font-size: 40px;
+  }
+
+  .read_article-container {
+    display: flex;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .read_article-container a {
+    font-size: 20px;
+  }
+
+  .main-container {
+    display: flex;
+    padding: 10px;
+  }
+
+  .building-container {
+    display: flex;
+    padding: 10px;
+  }
+
+  .spa-container {
+    display: flex;
+    padding: 10px;
+  }
+
+  .equipment-container {
+    display: flex;
+    padding: 10px;
+  }
 }
 

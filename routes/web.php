@@ -35,7 +35,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
  Route::get('hotels', 'HotelController@index')->middleware('auth');
  Route::get('hotels/edit', 'HotelController@edit')->middleware('auth'); // 追記
  Route::post('hotels/edit', 'HotelController@update')->middleware('auth'); // 追記
- Route::get('hotels/read_list', 'HotelController@read_list')->middleware('auth');
+ Route::get('hotels/delete', 'HotelController@delete')->middleware('auth');
+ 
+ Route::get('hotels/all_read_list', 'HotelController@all_read_list');
+ Route::get('hotels/hotel_read_list', 'HotelController@hotel_read_list');
+ Route::get('hotels/ryokan_read_list', 'HotelController@ryokan_read_list');
  Route::get('hotels/read_article', 'HotelController@read_article');// 追記
  Route::post('hotels/read_article', 'HotelController@read'); // 追記
  Route::post('hotels/add_review', 'HotelController@add_review');

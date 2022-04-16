@@ -1,6 +1,6 @@
 @extends('layouts.app')
+@section('title', '基本情報')
 
-@section('title', '基本情報の新規作成')
 @section('content')
     <div class="container">
         <div class="col-md-8">
@@ -19,29 +19,33 @@
         <div class="row">
             <h2>投稿一覧（編集者用）</h2>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <a href="{{ action('RestaurantController@add') }}" role="button" class="btn btn-primary">新規作成</a>
-            </div>
-        </div>
-        <div class="row">
-            <tbody>
-                @foreach($posts as $hotel)
-                    <tr>
-                        <th>{{ $restauran->id }}</th>
-                        <td>{{ \Str::limit($hotel->name, 100) }}</td>
-                        @if (restauran->image_main)
-                        <img src="{{ asset('storage/image/' . $hotel->image_main) }}" class="restauran-list-row-image">
-                        @endif
-                        <td>{{ \Str::limit($hotel->address, 100) }}</td>
-                        <div>
-                            <a href="{{ action('RestaurantController@edit', ['id' => $hotel->id]) }}">編集</a>
-                            </div>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-                        </thead>
+            <table class="list-table">
+                        <tbody>
+                           @foreach($posts as $hotel)
+                                <tr>
+                                <th>{{ $hotel->id }}</th>
+                                @if ($hotel->image_main)
+                                <td>
+                                   <img src="{{ asset('storage/image/' . $hotel->image_main) }}" class="hotel-list-image"> 
+                                </td>
+                                @endif
+                                <td>
+                                    <div>
+                                     {{ \Str::limit($rest->name, 100) }}
+                                    </div>
+                                    <div>
+                                     {{ \Str::limit($hotel->todouhuken, 100) }} 
+                                    </div>
+                                    <div>
+                                     {{ \Str::limit($hotel->address, 100) }} 
+                                    </div>
+                                    <div>
+                                     <a href="{{ action('RestaurantController@edit', ['id' => $hotel->id]) }}">編集</a>
+                                    </div>
+                                </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

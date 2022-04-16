@@ -15,30 +15,32 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('main_genre_list');
             $table->string('name');
+            $table->string('todouhuken')->nullable();
+            $table->string('address')->nullable();
+            $table->string('access')->nullable();
+            $table->string('reserve')->nullable();
             $table->string('image_main')->nullable();
             $table->string('image_sample')->nullable();
-            $table->string('address');
-            $table->string('access')->nullable();
+            $table->string('sub_genre')->nullable();
             $table->string('parking')->nullable();
             $table->string('business_hours')->nullable();
             $table->string('inquiry')->nullable();
-            $table->string('hp_url')->nullable();
             $table->string('budget')->nullable();
             $table->string('settlement')->nullable();
             $table->string('number_of_seats')->nullable();
             $table->string('reserved')->nullable();
             $table->string('smoking')->nullable();
             $table->string('spatial_equipment')->nullable();
-            $table->string('with_children')->nullable();
+            $table->string('menu')->nullable();
             $table->string('store_pr')->nullable();
-            $table->string('interest')->nullable();
+            
             
            
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.

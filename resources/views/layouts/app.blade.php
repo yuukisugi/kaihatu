@@ -1,5 +1,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+<link rel="stylesheet" href="mobile.css" media="screen and (max-width: 799px)">
+<link rel="stylesheet" href="pc.css" media="screen and (min-width: 800px)">
 
 <head>
     <meta charset="utf-8">
@@ -13,7 +14,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -32,14 +32,14 @@
   <div class="container">
     <div class="header-title-area">
       <h1 class="logo">お出かけ総合サイト</h1>
-      <p class="text-sub">あなたに最高の時間を提供します。</p>
+      <!--<p class="text-sub">あなたに最高の時間を提供します。</p>-->
     </div>
     @guest
         <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
     {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
     @else
     <div>
-        <a class="dropdown-item" href="{{ route('logout') }}"
+        <a class="logout" class="dropdown-item" href="{{ route('logout') }}"
            onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
@@ -49,20 +49,22 @@
         </form>
     </div>
     @endguest
+    <input id="btn-mode" type="checkbox"> ダークモード
   </div>
 </header>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm"><!--navbar-dark背景が暗い時 bg-○○色指定-->
+        　
             <div class="container">
                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Mypage</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Q&A</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ action('TopController@index') }}">Top</a></li>
+                          <li class="nav-item"><a class="nav-link" href="">Mypage</a></li>
+                          <li class="nav-item"><a class="nav-link" href="">Q&A</a></li>
+                          <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

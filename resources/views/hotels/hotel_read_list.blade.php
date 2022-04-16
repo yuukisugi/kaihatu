@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="col-md-8">
-            <form action="{{ action('HotelController@read_list') }}" method="get">
+            <form action="{{ action('HotelController@hotel_read_list') }}" method="get">
                 <div class="form-group row">
                     <div class="col-md-8">
                         <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
@@ -17,27 +17,25 @@
             </form>
         </div>
         <div class="row">
-            <h2>投稿一覧（閲覧者用）</h2>
+            <h2>ホテル一覧（閲覧者用）</h2>
         </div>
-        <table class="hotel-list-table">
+        <table class="list-table">
             <tbody>
                 @foreach($posts as $hotel)
                     <tr>
-                    <th>{{ $hotel->id }}</th>
                     @if ($hotel->image_main)
                     <td>
-                       <img src="{{ asset('storage/image/' . $hotel->image_main) }}" class="hotel-list-image"> 
+                       <img src="{{ asset('storage/image/' . $hotel->image_main) }}" class="list-image"> 
                     </td>
                     @endif
                     <td>
+                        <h2>{{ $hotel->id }} </h2>
                         <div>
-                         {{ \Str::limit($hotel->name, 100) }}
+                         <p>{{ \Str::limit($hotel->name, 100) }}  </p>
+                         <p>{{ \Str::limit($hotel->todouhuken, 100) }}    {{ \Str::limit($hotel->address, 100) }}</p>
                         </div>
                         <div>
-                         {{ \Str::limit($hotel->address, 100) }} 
-                        </div>
-                        <div>
-                         <a href="{{ action('HotelController@read_article', ['id' => $hotel->id]) }}">詳細を見る</a> 
+                         <a class="link" href="{{ action('HotelController@read_article', ['id' => $hotel->id]) }}">詳細を見る</a> 
                         </div>
                     </td>
                     </tr>

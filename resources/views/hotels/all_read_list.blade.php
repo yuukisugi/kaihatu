@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="col-md-8">
-            <form action="{{ action('RestaurantController@read_list') }}" method="get">
+            <form action="{{ action('HotelController@all_read_list') }}" method="get">
                 <div class="form-group row">
                     <div class="col-md-8">
                         <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
@@ -17,34 +17,25 @@
             </form>
         </div>
         <div class="row">
-            <h2>投稿一覧（閲覧者用）</h2>
+            <h2>宿泊施設一覧（閲覧者用）</h2>
         </div>
         <table class="list-table">
             <tbody>
-                @foreach($posts as $restaurant)
+                @foreach($posts as $hotel)
                     <tr>
-                    @if ($restaurant->image_main)
+                    @if ($hotel->image_main)
                     <td>
-                       <img src="{{ asset('storage/image/' . $restaurant->image_main) }}" class="list-image"> 
+                       <img src="{{ asset('storage/image/' . $hotel->image_main) }}" class="list-image"> 
                     </td>
                     @endif
                     <td>
-                        <h2>
-                           {{ $restaurant->id }} 
-                        </h2>
+                        <h2>{{ $hotel->id }}</h2>
                         <div>
-                             <p>
-                               {{ \Str::limit($restaurant->name, 100) }}  
-                             </p>
-                             <p>
-                                {{ \Str::limit($restaurant->todouhuken, 100) }}    {{ \Str::limit($restaurant->address, 100) }}  
-                             </p>
-                             <p>
-                               
-                             </p>
+                         <p>{{ \Str::limit($hotel->name, 100) }}</p>
+                         <p>{{ \Str::limit($hotel->todouhuken, 100) }}    {{ \Str::limit($hotel->address, 100) }}</p>
                         </div>
                         <div>
-                         <a href="{{ action('HotelController@read_article', ['id' => $restaurant->id]) }}">詳細を見る</a> 
+                         <a class="link" href="{{ action('HotelController@read_article', ['id' => $hotel->id]) }}">詳細を見る</a> 
                         </div>
                     </td>
                     </tr>

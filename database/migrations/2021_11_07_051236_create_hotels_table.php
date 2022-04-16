@@ -16,41 +16,64 @@ class CreateHotelsTable extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->bigIncrements('id');
+            
             $table->string('name');
+            $table->string('reserve')->nullable();
             $table->string('hotelorryokan')->nullable();
             $table->string('image_main')->nullable();
-            $table->string('todouhuken');
-            $table->string('address');
+            $table->string('todouhuken')->nullable();;
+            $table->string('address')->nullable();
             $table->string('access')->nullable();
             $table->string('parking')->nullable();
-            $table->string('image_building')->nullable();
-            $table->string('ja_room_count')->nullable();
-            $table->string('we_room_count')->nullable();
-            $table->string('ja_we_room_count')->nullable();
-            $table->string('other_room_count')->nullable();
-            $table->string('style_total_room_count')->nullable();
-            $table->string('single')->nullable();
-            $table->string('double')->nullable();
-            $table->string('twin')->nullable();
-            $table->string('sweet')->nullable();
-            $table->string('capacity_total_room_count')->nullable();
-            $table->string('room_detail')->nullable();
+            
+            $table->string('room_name')->nullable();
+            $table->string('image_room')->nullable();
+            $table->string('room_type')->nullable();
+            $table->string('room_size')->nullable();
+            $table->string('bet_size')->nullable();
             $table->string('equipment')->nullable();
-            $table->string('internet')->nullable();
+            $table->string('amenities')->nullable();
+            
+            $table->string('room_name_2')->nullable();
+            $table->string('image_room_2')->nullable();
+            $table->string('room_type_2')->nullable();
+            $table->string('room_size_2')->nullable();
+            $table->string('bet_size_2')->nullable();
+            $table->string('equipment_2')->nullable();
+            $table->string('amenities_2')->nullable();
+            
+            $table->string('room_name_3')->nullable();
+            $table->string('image_room_3')->nullable();
+            $table->string('room_type_3')->nullable();
+            $table->string('room_size_3')->nullable();
+            $table->string('bet_size_3')->nullable();
+            $table->string('equipment_3')->nullable();
+            $table->string('amenities_3')->nullable();
+            
+            $table->string('total_room_count')->nullable();
+            
             $table->string('image_spa')->nullable();
-            $table->string('spa')->nullable();
-            $table->string('open_spa')->nullable();
-            $table->string('other_spa')->nullable();
-            $table->string('spa_requirement')->nullable();
-            $table->string('spa_requiremen')->nullable();
-            $table->string('image_equipment')->nullable();
+            $table->string('spa_comment')->nullable();
+            $table->string('spa_business_hours')->nullable();
+            $table->string('spa_terms_of_use')->nullable();
+            
+            $table->string('image_open_spa')->nullable();
+            $table->string('open_spa_comment')->nullable();
+            $table->string('open_spa_business_hours')->nullable();
+            $table->string('open_spa_terms_of_use')->nullable();
+            
+            $table->string('image_building')->nullable();
             $table->string('building_detail')->nullable();
-            $table->string('service')->nullable();
+            
+            $table->string('image_event')->nullable();
+            $table->string('event')->nullable();
+           
             $table->string('settlement')->nullable();
-            $table->string('check_in')->nullable();
-            $table->string('check_out')->nullable();
-            $table->string('hotel_detail')->nullable();
+            
+            $table->string('check_in_out')->nullable();
+           
             $table->string('barrier_free')->nullable();
+            
             $table->timestamps();
         });
     }

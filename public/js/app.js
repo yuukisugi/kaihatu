@@ -49682,6 +49682,34 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+var darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+var darkModeOn = darkModeMediaQuery.matches;
+darkModeMediaQuery.addListener(function (e) {
+  var darkModeOn = e.matches;
+
+  if (darkModeOn) {
+    // Dark
+    document.body.classList.remove('light-theme');
+    document.body.classList.add('dark-theme');
+  } else {
+    // Light
+    document.body.classList.remove('dark-theme');
+    document.body.classList.add('light-theme');
+  }
+});
+var btn = document.querySelector("#btn-mode"); // チェックした時の挙動
+
+btn.addEventListener("change", function () {
+  if (btn.checked == true) {
+    // ダークモード
+    document.body.classList.remove("light-theme");
+    document.body.classList.add("dark-theme");
+  } else {
+    // ライトモード
+    document.body.classList.remove("dark-theme");
+    document.body.classList.add("light-theme");
+  }
+});
 
 /***/ }),
 

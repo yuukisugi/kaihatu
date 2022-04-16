@@ -13,7 +13,6 @@ class History extends Model
         'hotels_id' => 'required',
         'restaurant_id' => 'required',
         'store_id' => 'required',
-        // 'hotels_id' => 'required',
         'edited_at' => 'required',
         
         

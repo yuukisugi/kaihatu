@@ -11,37 +11,56 @@ class Hotel extends Model
     // 以下を追記
     public static $rules = array(
         'name' => 'required|max:30',
-        // 'image_main' => 'nullable|image',
-        'hotelorryokan' => 'required',
-        'todouhuken' => 'required|max:5',
-        'address' => 'required|max:20',
-        'parking' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:4',
-        // 'image_building' => 'nullable|image',
-        'ja_room_count' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'we_room_count' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'ja_we_room_count' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'other_room_count' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'style_total_room_count' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:4',
-        'single' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'double' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'twin' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'sweet' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'capacity_total_room_count' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:4',
-        'room_detail' => 'nullable|max:100',
-        'equipment' => 'nullable|max:100',
-        'internet' => 'nullable|max:100',
-        // 'image_spa' => 'nullable|image',
-        'spa' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'open_spa' => 'nullable|regex:/^[a-zA-Z0-9]+$/|max:3',
-        'other_spa' => 'nullable|max:100',
-        'spa_requirement' => 'nullable|max:100',
-        // 'image_equipment' => 'nullable|image',
-        'building_detail' => 'nullable|max:100',
-        'service' => 'nullable|max:100',
-        'settlement' => 'nullable|max:100',
-        'check_in' => 'nullable|max:100',
-        'hotel_detail' => 'nullable|max:100',
+        'reserve' => 'nullable',
+        'hotelorryokan' => 'nullable',
+        'todouhuken' => 'nullable',
+        'address' => 'nullable|max:100',
+        'access' => 'nullable|max:100',
+        'parking' => 'nullable|max:100',
+        
+        'room_name' => 'nullable|max:100',
+        'room_type' => 'nullable|max:100',
+        'room_size' => 'nullable|max:100',
+        'bet_size' => 'nullable|max:100',
+        'equipment' => 'nullable|max:300',
+        'amenities' => 'nullable|max:300',
+        
+        'room_name_2' => 'nullable|max:100',
+        'room_type_2' => 'nullable|max:100',
+        'room_size_2' => 'nullable|max:100',
+        'bet_size_2' => 'nullable|max:100',
+        'equipment_2' => 'nullable|max:300',
+        'amenities_2' => 'nullable|max:300',
+        
+        'room_name_3' => 'nullable|max:100',
+        'room_type_3' => 'nullable|max:100',
+        'room_size_3' => 'nullable|max:100',
+        'bet_size_3' => 'nullable|max:100',
+        'equipment_3' => 'nullable|max:300',
+        'amenities_3' => 'nullable|max:300',
+        
+        'total_room_count' => 'nullable|max:10',
+        
+        'spa_comment' => 'nullable|max:300',
+        'spa_business_hours' => 'nullable|max:300',
+        'spa_terms_of_use' => 'nullable|max:500',
+        
+        'open_spa_comment' => 'nullable|max:300',
+        'open_spa_business_hours' => 'nullable|max:300',
+        'spa_terms_of_use' => 'nullable|max:500',
+        
+        'building_detail' => 'nullable|max:300',
+        
+        'settlement' => 'nullable|max:300',
+        
+        'event' => 'nullable|max:100',
+        
+        'check_in_out' => 'nullable|max:100',
+        
         'barrier_free' => 'nullable|max:100',
+        
+        
+        
     );
      
      public function histories()

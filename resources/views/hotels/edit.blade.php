@@ -14,20 +14,26 @@
                             @endforeach
                         </ul>
                     @endif
-                     <div class="form-group row">
+                    <div class="form-group row">
                         <label class="col-md-2">ホテル・旅館名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                            <input type="text" class="form-control" name="name" value="{{ ($hotel_form->name) }}">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label class="col-md-2">予約URL</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="reserve" value="{{ ($hotel_form->reserve) }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <p>デフォルト<br>
-                        <input type="radio" name="hotelorryokan" value="はい"> ホテル
-                        <input type="radio" name="hotelorryokan" value="いいえ"> 旅館
-                        </p>
+                        <p2>ホテルor旅館<br>
+                        <input type="radio" name="hotelorryokan" value="ホテル"> ホテル
+                        <input type="radio" name="hotelorryokan" value="旅館"> 旅館
+                        </p2>
                    </div>
                     <div class="form-group row">
-                        <label class="col-md-2">メイン画像</label>
+                        <img src="{{ asset('storage/image/' . $hotel_form->image_main) }}" class="hotel-list-image">
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image_main">
                         </div>
@@ -82,191 +88,258 @@
                             <option value="大分県">大分県</option>
                             <option value="宮崎県">宮崎県</option>
                             <option value="鹿児島県">鹿児島県</option>
-                            <option value="">沖縄県</option>
+                            <option value="沖縄県">沖縄県</option>
                         </select>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">市区町村</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="address" value="{{ old('address') }}">
+                            <input type="text" class="form-control" name="address" value="{{ ($hotel_form->address) }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">アクセス</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="access" value="{{ old('access') }}">
+                            <input type="text" class="form-control" name="access" value="{{ ($hotel_form->access) }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">パーキング</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="parking" value="{{ old('parking') }}">
+                            <input type="text" class="form-control" name="parking" value="{{ ($hotel_form->parking) }}">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label class="col-md-2">客室名</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="room_name" value="{{ ($hotel_form->room_name) }}">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <img src="{{ asset('storage/image/' . $hotel_form->image_room) }}" class="hotel-list-image"> 
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image_room">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label class="col-md-2">客室タイプ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="room_type" value="{{ ($hotel_form->room_type) }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">部屋・施設の画像</label>
+                        <label class="col-md-2">広さ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="room_size" value="{{ ($hotel_form->room_size) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">ベットサイズ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="bet_size" value="{{ ($hotel_form->bet_size) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">部屋設備</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="equipment" rows="10">{{ ($hotel_form->equipment) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">アメニティ</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="amenities" rows="10">{{ ($hotel_form->amenities) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">客室名</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="room_name_2" value="{{ ($hotel_form->room_name_2) }}">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <img src="{{ asset('storage/image/' . $hotel_form->image_room_2) }}" class="hotel-list-image"> 
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image_room_2">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label class="col-md-2">客室タイプ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="room_type_2" value="{{ ($hotel_form->room_type_2) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">広さ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="room_size_2" value="{{ ($hotel_form->room_size_2) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">ベットサイズ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="bet_size_2" value="{{ ($hotel_form->bet_size_2) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">部屋設備</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="equipment_2" rows="10">{{ ($hotel_form->equipment_2) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">アメニティ</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="amenities_2" rows="10">{{ ($hotel_form->amenities_2) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">客室名</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="room_name_3" value="{{ ($hotel_form->room_name_3) }}">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <img src="{{ asset('storage/image/' . $hotel_form->image_room_3) }}" class="hotel-list-image"> 
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image_room_3">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label class="col-md-2">客室タイプ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="room_type_3" value="{{ ($hotel_form->room_type_3) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">広さ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="room_size_3" value="{{ ($hotel_form->room_size_3) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">ベットサイズ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="bet_size_3" value="{{ ($hotel_form->bet_size_3) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">部屋設備</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="equipment_3" rows="10">{{ ($hotel_form->equipment_3) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">アメニティ</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="amenities_3" rows="10">{{ ($hotel_form->amenities_3) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">総部屋数</label>
+                        <div class="col-md-10">
+                            <input type="number" class="form-control" name="total_room_count" value="{{ ($hotel_form->capacity_total_room_count) }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <img src="{{ asset('storage/image/' . $hotel_form->image_spa) }}" class="hotel-list-image"> 
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image_spa">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">フリーコメント</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="spa_comment" rows="10">{{ ($hotel_form->spa_comment) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">風呂営業時間</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="spa_business_hours" rows="10">{{ ($hotel_form->spa_business_hours) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">利用料金・条件など</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="spa_terms_of_use" rows="10">{{ ($hotel_form->spa_terms_of_use) }}</textarea>
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image_open_spa">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">フリーコメント</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="open_spa_comment" rows="10">{{ ($hotel_form->open_spa_comment) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">風呂営業時間</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="open_spa_business_hours" rows="10">{{ ($hotel_form->open_spa_business_hours) }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">利用料金・条件など</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="open_spa_terms_of_use" rows="10">{{ ($hotel_form->open_spa_terms_of_use) }}</textarea>
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <img src="{{ asset('storage/image/' . $hotel_form->image_building) }}" class="hotel-list-image"> 
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image_building">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">洋室</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="we_room_count" value="{{ old('we_room_count') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">和室</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="ja_we_room_count" value="{{ old('ja_we_room_count') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">和洋室</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="ja_we_room_count" value="{{ old('ja_we_room_count') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">その他</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="other_room_count" value="{{ old('other_room_count') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">総部屋数</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="style_total_room_count" value="{{ old('style_total_room_count') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">シングル</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="single" value="{{ old('single') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">ダブル</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="double" value="{{ old('double') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">ツイン</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="twin" value="{{ old('twin') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">スイート</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="sweet" value="{{ old('sweet') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">総部屋数</label>
-                        <div class="col-md-10">
-                            <input type="number" class="form-control" name="capacity_total_room_count" value="{{ old('capacity_total_room_count') }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">部屋補足</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="room_detail" rows="5">{{ old('room_detail') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">標準的な部屋設備</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="equipment" rows="5">{{ old('equipment') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">インターネット関連</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="internet" rows="5">{{ old('internet') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">温泉・風呂の画像</label>
-                        <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image_spa">
-                        </div>
-                    </div>
-                     <div class="form-group row">
-                        <label class="col-md-2">温泉</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="spa" value="{{ old('spa') }}">
-                        </div>
-                    </div>
-                     <div class="form-group row">
-                        <label class="col-md-2">露天風呂</label>
-                        <div class="col-md-10">
-                           <input type="text" class="form-control" name="open_spa" value="{{ old('open_spa') }}">
-                        </div>
-                    </div>
-                     <div class="form-group row">
-                        <label class="col-md-2">その他の風呂設備</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="other_spa" rows="5">{{ old('other_spa') }}</textarea>
-                        </div>
-                    </div>
-                     <div class="form-group row">
-                        <label class="col-md-2">風呂利用条件</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="spa_requirement" rows="5">{{ old('spa_requirement') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">アメニティ・施設・サービスの画像</label>
-                        <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image_equipment">
-                        </div>
-                    </div>
-                     <div class="form-group row">
                         <label class="col-md-2">施設内容</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="building_detail" rows="5">{{ old('building_detail') }}</textarea>
+                            <textarea class="form-control" name="building_detail" rows="10">{{ ($hotel_form->building_detail) }}</textarea>
                         </div>
                     </div>
-                     <div class="form-group row">
-                        <label class="col-md-2">サービス&レジャー</label>
+                    <div class="form-group row">
+                        <img src="{{ asset('storage/image/' . $hotel_form->image_event) }}" class="hotel-list-image">
                         <div class="col-md-10">
-                            <textarea class="form-control" name="service" rows="5">{{ old('service') }}</textarea>
+                            <input type="file" class="form-control-file" name="image_event">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">イベント</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="event" rows="10">{{ ($hotel_form->event) }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">利用可能な決済方法</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="settlement" rows="5">{{ old('settlement') }}</textarea>
+                            <textarea class="form-control" name="settlement" rows="10">{{ ($hotel_form->settlement) }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">標準的なチェックイン時間</label>
+                        <label class="col-md-2">チェックイン/チェックアウト</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="check_in" rows="5">{{ old('check_in') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">標準的なチェックアウト時間</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="check_out" rows="5">{{ old('check_out') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">補足</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="hotel_detail" rows="5">{{ old('hotel_detail') }}</textarea>
+                            <textarea class="form-control" name="check_in_out" rows="2">{{ ($hotel_form->check_in_out) }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">バリアフリーの対応</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="barrier_free" rows="5">{{ old('barrier_free') }}</textarea>
+                            <textarea class="form-control" name="barrier_free" rows="5">{{ ($hotel_form->barrier_free) }}</textarea>
                         </div>
                     </div>
-                </form><div class="row mt-5">
+                  <div class="form-group row">
+                        <div class="col-md-10">
+                            <input type="hidden" name="id" value="{{ $hotel_form->id }}">
+                            {{ csrf_field() }}
+                            <input type="submit" class="btn btn-primary" value="更新">
+                        </div>
+                    </div>
+                </form>
+                <div class="row mt-5">
                     <div class="col-md-4 mx-auto">
                         <h2>編集履歴</h2>
                         <ul class="list-group">

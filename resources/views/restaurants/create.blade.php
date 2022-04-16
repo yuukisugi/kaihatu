@@ -4,10 +4,9 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-12 mx-auto">
                 <h2>飲食店を投稿</h2>
                 <form action="{{ action('RestaurantController@create') }}" method="post" enctype="multipart/form-data">
-
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -16,45 +15,34 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2">店舗名</label>
+                        <label class="col-md-2">メイン画像</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                            <input type="file" class="form-control-file" name="image_main">
                         </div>
-                        <label class="col-md-2">メインジャンル</label>
-                        <select class="my_class" name="main_genre">
+                    </div>
+                    <div class="form-group row">
+                     <label class="col-md-2">メインジャンル</label>
+                        <div class="col-md-10">
+                         <select class="main_genre_list" name="main_genre">
                             <option value="1">和食</option>
                             <option value="2">洋食</option>
                             <option value="3">ラーメン</option>
                             <option value="4">焼肉</option>
                             <option value="5">寿司</option>
                             <option value="6">カフェ・喫茶店</option>
-                        </select>
+                         </select>
+                        </div>
+                    </div>
                     <div class="form-group row">
-                        <label class="col-md-2">メイン画像</label>
+                        <label class="col-md-2">店舗名</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image_main">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
-                     <div class="form-group row">
-                        <label class="col-md-2">店内・料理の画像</label>
-                        <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image_sample">
-                        </div>
-                    <fieldset>
-                      <legend>サブジャンル</legend>{--多くなりすぎ、考え直し--}
-                      <div>
-                        <input type="checkbox" id="coding" name="sub_genre" value="coding">
-                        <label for="coding">居酒屋</label>
-                      </div>
-                      
-                      <div>
-                        <input type="checkbox" id="music" name="interest" value="music">
-                        <label for="music">カクテルバー</label>
-                      </div>
-                    </fieldset>
-                    </div>
-                    <label class="col-md-2">都道府県</label>
-                        <select class="my_class" name="todouhuken">
+                    <div class="form-group row">
+                     <label class="col-md-2">都道府県</label>
+                         <div class="col-md-10">
+                          <select class="my_class" name="todouhuken">
                             <option value="北海道">北海道</option>
                             <option value="青森県">青森県</option>
                             <option value="岩手県">岩手県</option>
@@ -101,9 +89,11 @@
                             <option value="大分県">大分県</option>
                             <option value="宮崎県">宮崎県</option>
                             <option value="鹿児島県">鹿児島県</option>
-                            <option value="沖縄県">沖縄県</option>
-                        </select>
-                    <div class="form-group row">
+                            <option value="">沖縄県</option>
+                          </select>
+                        </div>
+                    </div>
+                     <div class="form-group row">
                         <label class="col-md-2">市区町村</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="address" value="{{ old('address') }}">
@@ -114,6 +104,85 @@
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="access" value="{{ old('access') }}">
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">予約URL</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="reserve" value="{{ old('reserve') }}">
+                        </div>
+                    </div>
+                    
+                     <div class="form-group row">
+                        <label class="col-md-2">店内・料理の画像</label>
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image_sample">
+                        </div>
+                    <div class="form-group row">
+                        <fieldset>
+                          <legend>サブジャンル</legend>{--多くなりすぎ、考え直し--}
+                          <div>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">居酒屋</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">地酒・地ビール</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">ワイン	</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">日本酒</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">カクテルバー</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">スイーツ</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">日本料理</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">韓国料理</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">中華料理</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">タイ料理</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">スペイン料理</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">創作料理</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">居酒屋</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">カクテルバー</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">和食</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">洋食</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">洋食</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">洋食</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">居酒屋</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">カクテルバー</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">和食</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">洋食</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">洋食</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">洋食</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">居酒屋</label>
+                            <input type="checkbox" name="sub_genre" value="sub_genre">
+                            <label for="sub_genre">カクテルバー</label>
+                          </div>
+                        </fieldset>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">パーキング</label>
@@ -127,25 +196,13 @@
                             <input type="text" class="form-control" name="usiness_hours" value="{{ old('business_hours') }}">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <p>予約の可否<br>
-                        <input type="radio" name="reserve" value="はい"> 可
-                        <input type="radio" name="reserve" value="いいえ"> 否
-                        </p>
-                   </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">HPURL</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="hp_url" value="{{ old('hp_url') }}">
-                        </div>
-                    </div>
+                   
                     <div class="form-group row">
                         <label class="col-md-2">お問い合わせ</label>
                         <div class="col-md-10">
                             <input type="number" class="form-control" name="inquiry" value="{{ old('inquiry') }}">
                         </div>
                     </div>
-                   
                     <div class="form-group row">
                         <label class="col-md-2">予算</label>
                         <div class="col-md-10">
@@ -153,7 +210,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">利用可能な決済方法</label>{--チェックボックスから利用不可のものを外してもらう--}
+                        <label class="col-md-2">利用可能な決済方法</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="settlement" rows="5">{{ old('settlement') }}</textarea>
                         </div>
@@ -162,7 +219,7 @@
                         <label class="col-md-2">座席数</label>
                         <div class="col-md-10">
                             <input type="number" class="form-control" name="number_of_seats" value="{{ old('number_of_seats') }}">
-                        </n
+                        </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">貸切</label>
@@ -173,61 +230,49 @@
                     <div class="form-group row">
                         <label class="col-md-2">喫煙</label>
                         <div class="col-md-10">
-                            <input type="number" class="form-control" name="smoking" value="{{ old('smoking') }}">
+                            <input type="text" class="form-control" name="smoking" value="{{ old('smoking') }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">空間・設備</label>
                         <div class="col-md-10">
-                            <input type="number" class="form-control" name="spatial_equipment" value="{{ old('patial_equipment') }}">
+                            <input type="text" class="form-control" name="spatial_equipment" value="{{ old('patial_equipment') }}">
                         </div>
-                     <fieldset>
-                      <legend>ドリンク</legend>
-                      <div>
-                        <input type="checkbox" id="music" name="interest" value="music">
-                        <label for="music">地酒・地ビール</label>
-                      </div>
-                      <div>
-                        <input type="checkbox" id="music" name="interest" value="music">
-                        <label for="music">ワイン</label>
-                      </div>
-                      <div>
-                        <input type="checkbox" id="music" name="interest" value="music">
-                        <label for="music">日本酒</label>
-                      </div>
-                    </fieldset>
+                    </div>
+                    <div class="form-group row">
+                         <label class="col-md-2">料理・飲み物</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="menu" value="{{ old('menu') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                     <fieldset>
                       <legend>利用シーン</legend>{--自由記述のほうがいいかも--}
-                      <div>
-                        <input type="checkbox" id="coding" name="interest" value="coding">
-                        <label for="coding">コーディング</label>
-                      </div>
-                      <div>
-                        <input type="checkbox" id="music" name="interest" value="music">
-                        <label for="music">音楽</label>
-                      </div>
-                    </fieldset>
-                    <div class="form-group row">
-                        <label class="col-md-2">子供連れ</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="with_children" value="{{ old('with_children') }}">
-                        </div>
-                    </div>
-                    </div>
-                    <div class="form-group row">
+                          <div>
+                            <input type="checkbox" name="use_scene" value="use_scene">
+                            <label for="use_scene">居酒屋</label>
+                            <input type="checkbox" name="use_scene" value="use_scene">
+                            <label for="use_scene">地酒・地ビール</label>
+                            <input type="checkbox" name="use_scene" value="use_scene">
+                            <label for="use_scene">ワイン	</label>
+                            <input type="checkbox" name="use_scene" value="use_scene">
+                            <label for="use_scene">日本酒</label>
+                            <input type="checkbox" name="use_scene" value="use_scene">
+                            <label for="use_scene">カクテルバー</label>
+                            <input type="checkbox" name="use_scene" value="use_scene">
+                            <label for="use_scene">スイーツ</label>
+                          </div>
+                     </fieldset>
+                   <div class="form-group row">
                         <label class="col-md-2">店舗PR</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="store_pr" rows="10">{{ old('store_pr') }}</textarea>
+                            <textarea class="form-control" name="barrier_free" rows="5">{{ old('store_pr') }}</textarea>
                         </div>
                     </div>
-                   
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <input type="submit" class="btn btn-primary" value="投稿">
                 </form>
             </div>
         </div>
     </div>
- 
-
-   
 @endsection
