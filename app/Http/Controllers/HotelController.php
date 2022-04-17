@@ -84,7 +84,7 @@ public function create(Request $request)
       
        if(isset($form['image_event'])){
         $path = $request->file('image_event')->store('public/image');
-        $hotel->image_eventt = basename($path);
+        $hotel->image_event = basename($path);
       } 
       else {
           $hotel->image_event = null;

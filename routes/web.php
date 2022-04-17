@@ -78,3 +78,10 @@ Route::post('/contact/confirm', 'ContactController@confirm')->name('contact.conf
 
 //送信完了ページ
 Route::post('/contact/thanks', 'ContactController@send')->name('contact.send');
+
+Route::group(['middleware' => 'auth:user'], function()
+{  
+  Route::get('user/index', 'UserController@index')->middleware('auth');
+  Route::get('user/edit', 'UserController@edit')->middleware('auth');
+  Route::post('user/edit', 'UserController@update')->middleware('auth');
+});
