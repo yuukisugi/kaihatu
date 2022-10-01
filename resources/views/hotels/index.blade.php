@@ -20,7 +20,7 @@
         <a href="{{ action('HotelController@add') }}" role="button" class="btn btn-primary">新規作成</a>
     </div>
        <div class="row">
-            <h2>投稿一覧（閲覧者用）</h2>
+            <h2>投稿一覧（投稿・編集者用）</h2>
         </div>
         <table class="hotel-list-table">
         　　<tbody>
