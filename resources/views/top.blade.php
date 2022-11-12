@@ -30,12 +30,12 @@
                         <td><img src="{{ asset('images/coffee shop.jpg')}}" alt=" " class="public-image" /></td>
                       </tr>
                       <tr>
-                        <td>><a href="＃">和食</a></td>
-                        <td>><a href="＃">洋食</a></td>
-                        <td>><a href="＃">焼肉</a></td>
-                        <td>><a href="＃">寿司</a></td>
-                        <td>><a href="＃">ラーメン</a></td>
-                        <td>><a href="＃">カフェ・喫茶店</a></td>
+                        <td><a href="＃">和食</a></td>
+                        <td><a href="＃">洋食</a></td>
+                        <td><a href="＃">焼肉</a></td>
+                        <td><a href="＃">寿司</a></td>
+                        <td><a href="＃">ラーメン</a></td>
+                        <td><a href="＃">カフェ・喫茶店</a></td>
                       </tr>
                     </table>
                 </div>

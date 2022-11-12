@@ -15,7 +15,7 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2">ホテル・旅館名[] </label>
+                        <label class="col-md-2">ホテル・旅館名 </label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
