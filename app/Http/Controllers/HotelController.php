@@ -253,6 +253,7 @@ public function create(Request $request)
   
  public function hotel_read_list(Request $request)
   {
+    exit;
       $cond_title = $request->cond_title;
       if ($cond_title != '') {
           // 検索されたら検索結果を取得する
