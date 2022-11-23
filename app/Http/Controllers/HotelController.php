@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Hotel;
 use App\History;
 use Carbon\Carbon;
+use Storage;
 use App\HotelReview;
 
 class HotelController extends Controller
@@ -27,8 +28,11 @@ public function create(Request $request)
      
     //   dd($form);
       if(isset($form['image_main'])){
-        $path = $request->file('image_main')->store('public/image');
-        $hotel->image_main = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_main'],'public');
+        $hotel->image_main = Storage::disk('s3')->url($path);
+        
+        //$path = $request->file('image_main')->store('public/image');
+        //$hotel->image_main = basename($path);
       } 
       else {
           $hotel->image_main = null;
@@ -151,9 +155,11 @@ public function create(Request $request)
       
       
       if(isset($form['image_main'])){
-        $path = $request->file('image_main')->store('public/image');
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_main'],'public');
+        $hotel->image_main = Storage::disk('s3')->url($path);
+        //$path = $request->file('image_main')->store('public/image');
         // dd($path);
-        $hotel->image_main = basename($path);
+        //$hotel->image_main = basename($path);
       } 
       else {
           $hotel->image_main = null;

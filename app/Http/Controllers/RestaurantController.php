@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Restaurant;
 use App\History;
 use Carbon\Carbon;
+use Storage;
 
 class RestaurantController extends Controller
 {
