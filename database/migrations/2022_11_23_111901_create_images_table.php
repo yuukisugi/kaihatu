@@ -12,12 +12,13 @@ class CreateImagesTable extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('images', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
-        });
-    }
+   {
+    Schema::create('images', function (Blueprint $table) {
+        $table->bigIncrements('id');
+        $table->string('image');
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.

@@ -85,3 +85,6 @@ Route::group(['middleware' => 'auth:user'], function()
   Route::get('user/edit', 'UserController@edit')->middleware('auth');
   Route::post('user/edit', 'UserController@update')->middleware('auth');
 });
+
+Route::get('/', 'ImageController@index');
+Route::post('/', 'ImageController@store')->name('image.store');

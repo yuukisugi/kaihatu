@@ -14,7 +14,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+     $images = Image::all();
+     return view('index', ['images'=>$images]);   //
     }
 
     /**
@@ -35,7 +36,16 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      {
+        $image = new Image();
+        $uploadImg = $request->image;
+        if($uploadImg->isValid()) {
+            $filePath = $uploadImg->store('public');
+            $image->image = str_replace('public/', '', $filePath);
+        }
+        $image->save();
+        return redirect('/');
+    }  //
     }
 
     /**
