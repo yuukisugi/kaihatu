@@ -26,6 +26,11 @@
         　　<tbody>
             @foreach($posts as $hotel)
                 <tr>
+                <div class="image">
+                 @if ($headline->image_path)
+               <img src="{{ $headline->image_path }}">
+                @endif
+             </div>
                 @if ($hotel->image_main)
                 <td>
                    <img src="{{ $post->image_main }}">

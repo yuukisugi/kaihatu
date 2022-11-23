@@ -29,7 +29,7 @@ public function create(Request $request)
     //   dd($form);
       if(isset($form['image_main'])){
         $path = Storage::disk('s3')->putFile('/',$hotel_form['image_main'],'public');
-        $hotel->image_main = Storage::disk('s3')->url($path);
+        $hotel->image_path = Storage::disk('s3')->url($path);
         
         //$path = $request->file('image_main')->store('public/image');
         //$hotel->image_main = basename($path);
@@ -39,56 +39,77 @@ public function create(Request $request)
       }
       
       if(isset($form['image_room'])){
-        $path = $request->file('image_room')->store('public/image');
-        $hotel->image_room = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_room'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+        
+        //$path = $request->file('image_room')->store('public/image');
+        //$hotel->image_room = basename($path);
       } 
       else {
           $hotel->image_room = null;
       }
       
       if(isset($form['image_room_2'])){
-        $path = $request->file('image_room_2')->store('public/image');
-        $hotel->image_room_2 = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_room_2'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+        
+        //$path = $request->file('image_room_2')->store('public/image');
+        //$hotel->image_room_2 = basename($path);
       } 
       else {
           $hotel->image_room_2 = null;
       }
       
       if(isset($form['image_room_3'])){
-        $path = $request->file('image_room_3')->store('public/image');
-        $hotel->image_room_3 = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_room_3'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+        
+       // $path = $request->file('image_room_3')->store('public/image');
+        //$hotel->image_room_3 = basename($path);
       } 
       else {
           $hotel->image_room_3 = null;
       }
       
        if(isset($form['image_building'])){
-        $path = $request->file('image_building')->store('public/image');
-        $hotel->image_building = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_building'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+         
+        //$path = $request->file('image_building')->store('public/image');
+        //$hotel->image_building = basename($path);
       } 
       else {
           $hotel->image_building = null;
       }
       
        if(isset($form['image_spa'])){
-        $path = $request->file('image_spa')->store('public/image');
-        $hotel->image_spa = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_spa'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+         
+        //$path = $request->file('image_spa')->store('public/image');
+        //$hotel->image_spa = basename($path);
       } 
       else {
           $hotel->image_spa = null;
       }
       
       if(isset($form['image_open_spa'])){
-        $path = $request->file('image_open_spa')->store('public/image');
-        $hotel->image_open_spa = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_open_spa'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+        
+        //$path = $request->file('image_open_spa')->store('public/image');
+        //$hotel->image_open_spa = basename($path);
       } 
       else {
           $hotel->image_open_spa = null;
       }
       
        if(isset($form['image_event'])){
-        $path = $request->file('image_event')->store('public/image');
-        $hotel->image_event = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_main'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+         
+        //$path = $request->file('image_event')->store('public/image');
+        //$hotel->image_event = basename($path);
       } 
       else {
           $hotel->image_event = null;
@@ -156,7 +177,7 @@ public function create(Request $request)
       
       if(isset($form['image_main'])){
         $path = Storage::disk('s3')->putFile('/',$hotel_form['image_main'],'public');
-        $hotel->image_main = Storage::disk('s3')->url($path);
+        $hotel->image_path = Storage::disk('s3')->url($path);
         //$path = $request->file('image_main')->store('public/image');
         // dd($path);
         //$hotel->image_main = basename($path);
@@ -166,27 +187,34 @@ public function create(Request $request)
       }
       
       if(isset($form['image_room'])){
-        $path = $request->file('image_room')->store('public/image');
-        // dd($path);
-        $hotel->image_room = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_room'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+        
+        //$path = $request->file('image_room')->store('public/image');
+        //$hotel->image_room = basename($path);
       } 
       else {
           $hotel->image_room = null;
       }
       
       if(isset($form['image_room_2'])){
-        $path = $request->file('image_room_2')->store('public/image');
-        // dd($path);
-        $hotel->image_room_2 = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_room2'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+        
+        //$path = $request->file('image_room_2')->store('public/image');
+        //$hotel->image_room_2 = basename($path);
       } 
       else {
           $hotel->image_room_2 = null;
       }
       
       if(isset($form['image_room_3'])){
-        $path = $request->file('image_room_3')->store('public/image');
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_room3'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+        
+        //$path = $request->file('image_room_3')->store('public/image');
         // dd($path);
-        $hotel->image_room_3 = basename($path);
+        //$hotel->image_room_3 = basename($path);
       } 
       else {
           $hotel->image_room_3 = null;
@@ -194,32 +222,44 @@ public function create(Request $request)
     //   dd($hotel->image_main);
       
        if(isset($form['image_building'])){
-        $path = $request->file('image_building')->store('public/image');
-        $hotel->image_building = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_building'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);  
+         
+        //$path = $request->file('image_building')->store('public/image');
+        //$hotel->image_building = basename($path);
       } 
       else {
           $hotel->image_building = null;
       }
       
        if(isset($form['image_spa'])){
-        $path = $request->file('image_spa')->store('public/image');
-        $hotel->image_spa = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_spa'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path); 
+         
+        //$path = $request->file('image_spa')->store('public/image');
+        //$hotel->image_spa = basename($path);
       } 
       else {
           $hotel->image_spa = null;
       }
       
       if(isset($form['image_open_spa'])){
-        $path = $request->file('image_open_spa')->store('public/image');
-        $hotel->image_open_spa = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_open_spa'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+        
+        //$path = $request->file('image_open_spa')->store('public/image');
+        //$hotel->image_open_spa = basename($path);
       } 
       else {
           $hotel->image_open_spa = null;
       }
       
       if(isset($form['image_event'])){
-        $path = $request->file('image_event')->store('public/image');
-        $hotel->image_event = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$hotel_form['image_event'],'public');
+        $hotel->image_path = Storage::disk('s3')->url($path);
+        
+        //$path = $request->file('image_event')->store('public/image');
+        //$hotel->image_event = basename($path);
       } 
       else {
           $hotel->image_event = null;
