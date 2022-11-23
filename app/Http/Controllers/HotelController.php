@@ -29,7 +29,7 @@ public function create(Request $request)
     //   dd($form);
       if(isset($form['image_main'])){
         $path = Storage::disk('s3')->putFile('/',$hotel_form['image_main'],'public');
-        $hotel->image_path = Storage::disk('s3')->url($path);
+        $hotel->image_past = Storage::disk('s3')->url($path);
         
         //$path = $request->file('image_main')->store('public/image');
         //$hotel->image_main = basename($path);

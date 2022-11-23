@@ -25,7 +25,7 @@
                     <tr>
                     @if ($hotel->image_main)
                     <td>
-                       <img src="{{ asset('storage/image/' . $hotel->image_main) }}" class="list-image"> 
+                       <img src="{{ $post->image_main }}" class="list-image"> 
                     </td>
                     @endif
                     <td>
